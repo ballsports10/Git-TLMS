@@ -1,0 +1,32 @@
+@import url(https://fonts.googleapis.com/earlyaccess/jejugothic.css);
+@import url(https//fonts.googleapis.com/earlyaccess/hanna.css);
+.navbar-brand, h1, h2, h3, h4 {
+	font-family: 'Jeju Gothic';
+}
+h5 {
+	font-family: 'hanna';
+	font-size: 18px;
+}
+body {
+	font-family: 'hanna';
+}
+
+
+
+/*@import url(https://fonts.googleapis.com/earlyaccess/jejugothic.css);
+@import url(https://fonts.googleapis.com/earlyaccess/hanna.css); 
+@import url(//fonts.googleapis.com/earlyaccess/jejumyeongjo.css);
+.navbar-brand, h1,h2,h3,h4,h5{
+	font-family: 'Jeju Gothic';
+}
+
+body {
+	font-family: 'Jeju Myeongjo';
+	font-size: 18px;
+}
+
+ 로고를 뜻하는 brand와 제목을 뜻하는 h1,h2,h3,h4에는 굵은 글씨체인 제주고딕을 사용할 수 있도록 정의한다
+	body에는 한나를 적용한다 h5 {
+	font-family: 'Jeju Gothic';
+	/*font-size: 5px;*/
+}*/
