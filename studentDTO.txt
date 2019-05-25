@@ -1,0 +1,28 @@
+package student;		// 데이터베이스에서 모델링 한 학생 테이블을 그대로 작성한다
+
+public class studentDTO {
+	
+	private String id;
+	private String password;
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	
+	public studentDTO() {
+
+	}
+	public studentDTO(String id, String password) {
+		this.id = id;
+		this.password = password;
+	}
+	
+}	

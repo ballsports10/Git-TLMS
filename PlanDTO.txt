@@ -1,0 +1,199 @@
+package plan;
+
+public class PlanDTO {
+	
+	String id;
+	String lectureOpener;
+	String lectureTime;
+	String lectureMentor;
+	String lectureSubject;
+	String lectureDivide; 
+	String lectureName; 
+	String lectureBackground; 
+	String lectureGoal; 
+	String lecture1st; 
+	String lecture2st; 
+	String lecture3st; 
+	String lecture4st; 
+	String lecture5st; 
+	String lectureObject; 
+	String lRI; 
+	String lEPI;
+	String lRM;
+	String lEPM; 
+	String lRA; 
+	String lEPA; 
+	String lectureRatingStandard;
+	
+
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	public String getLectureOpener() {
+		return lectureOpener;
+	}
+	public void setLectureOpener(String lectureOpener) {
+		this.lectureOpener = lectureOpener;
+	}
+	public String getLectureTime() {
+		return lectureTime;
+	}
+	public void setLectureTime(String lectureTime) {
+		this.lectureTime = lectureTime;
+	}
+	public String getLectureMentor() {
+		return lectureMentor;
+	}
+	public void setLectureMentor(String lectureMentor) {
+		this.lectureMentor = lectureMentor;
+	}
+	public String getLectureSubject() {
+		return lectureSubject;
+	}
+	public void setLectureSubject(String lectureSubject) {
+		this.lectureSubject = lectureSubject;
+	}
+	public String getLectureDivide() {
+		return lectureDivide;
+	}
+	public void setLectureDivide(String lectureDivide) {
+		this.lectureDivide = lectureDivide;
+	}
+	public String getLectureName() {
+		return lectureName;
+	}
+	public void setLectureName(String lectureName) {
+		this.lectureName = lectureName;
+	}
+	public String getLectureBackground() {
+		return lectureBackground;
+	}
+	public void setLectureBackground(String lectureBackground) {
+		this.lectureBackground = lectureBackground;
+	}
+	public String getLectureGoal() {
+		return lectureGoal;
+	}
+	public void setLectureGoal(String lectureGoal) {
+		this.lectureGoal = lectureGoal;
+	}
+	public String getLecture1st() {
+		return lecture1st;
+	}
+	public void setLecture1st(String lecture1st) {
+		this.lecture1st = lecture1st;
+	}
+	public String getLecture2st() {
+		return lecture2st;
+	}
+	public void setLecture2st(String lecture2st) {
+		this.lecture2st = lecture2st;
+	}
+	public String getLecture3st() {
+		return lecture3st;
+	}
+	public void setLecture3st(String lecture3st) {
+		this.lecture3st = lecture3st;
+	}
+	public String getLecture4st() {
+		return lecture4st;
+	}
+	public void setLecture4st(String lecture4st) {
+		this.lecture4st = lecture4st;
+	}
+	public String getLecture5st() {
+		return lecture5st;
+	}
+	public void setLecture5st(String lecture5st) {
+		this.lecture5st = lecture5st;
+	}
+	public String getLectureObject() {
+		return lectureObject;
+	}
+	public void setLectureObject(String lectureObject) {
+		this.lectureObject = lectureObject;
+	}
+	public String getlRI() {
+		return lRI;
+	}
+	public void setlRI(String lRI) {
+		this.lRI = lRI;
+	}
+	public String getlEPI() {
+		return lEPI;
+	}
+	public void setlEPI(String lEPI) {
+		this.lEPI = lEPI;
+	}
+	public String getlRM() {
+		return lRM;
+	}
+	public void setlRM(String lRM) {
+		this.lRM = lRM;
+	}
+	public String getlEPM() {
+		return lEPM;
+	}
+	public void setIEPM(String lEPM) {
+		this.lEPM = lEPM;
+	}
+	public String getlRA() {
+		return lRA;
+	}
+	public void setIRA(String lRA) {
+		this.lRA = lRA;
+	}
+	public String getlEPA() {
+		return lEPA;
+	}
+	public void setIEPA(String lEPA) {
+		this.lEPA = lEPA;
+	}
+	public String getLectureRatingStandard() {
+		return lectureRatingStandard;
+	}
+	public void setLectureRatingStandard(String lectureRatingStandard) {
+		this.lectureRatingStandard = lectureRatingStandard;
+	}
+	
+	
+	// 기본 생성자 만들어준다
+	
+	public PlanDTO() {}
+	
+	//String lecture5st 뻈음
+	public PlanDTO(String id, String lectureOpener, String lectureTime, String lectureMentor, String lectureSubject,
+			String lectureDivide, String lectureName, String lectureBackground, String lectureGoal, String lecture1st,
+			String lecture2st, String lecture3st, String lecture4st, String lecture5st, String lectureObject,
+			String lRI, String lEPI, String lRM, String lEPM, String lRA, String lEPA, String lectureRatingStandard) {
+		
+		this.id = id;
+		this.lectureOpener = lectureOpener;
+		this.lectureTime = lectureTime;
+		this.lectureMentor = lectureMentor;
+		this.lectureSubject = lectureSubject;
+		this.lectureDivide = lectureDivide;
+		this.lectureName = lectureName;
+		this.lectureBackground = lectureBackground;
+		this.lectureGoal = lectureGoal;
+		this.lecture1st = lecture1st;
+		this.lecture2st = lecture2st;
+		this.lecture3st = lecture3st;
+		this.lecture4st = lecture4st;
+		this.lecture5st = lecture5st;
+		this.lectureObject = lectureObject;
+		this.lRI = lRI;
+		this.lEPI = lEPI;
+		this.lRM = lRM;
+		this.lEPM = lEPM;
+		this.lRA = lRA;
+		this.lEPA = lEPA;
+		this.lectureRatingStandard = lectureRatingStandard;
+		
+	} 
+	
+	
+}

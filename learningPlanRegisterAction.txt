@@ -1,0 +1,154 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="plan.PlanDTO" %>
+<%@ page import="plan.PlanDAO" %>
+<%@ page import="java.io.PrintWriter"%>
+
+<%
+	request.setCharacterEncoding("UTF-8");
+	//로그인을 한 상태라면 회원가입을 요청 못함
+	String id = null;
+	if(session.getAttribute("id") != null) {
+		id = (String) session.getAttribute("id");
+	}
+	if(id == null) {
+		PrintWriter script = response.getWriter();
+		script.println("<script>");
+		script.println("alert('로그인을 해주세요.');");
+		script.println("location.href = 'userLogin.jsp';");
+		script.println("</script>");
+		script.close();
+		return;
+	}
+	
+	String lectureOpener = null;
+	String lectureTime = null;
+	String lectureMentor = null;
+	String lectureSubject = null;
+	String lectureDivide = null; 
+	String lectureName = null; 
+	String lectureBackground = null; 
+	String lectureGoal = null; 
+	String lecture1st = null; 
+	String lecture2st = null; 
+	String lecture3st = null; 
+	String lecture4st = null; 
+	String lecture5st = null; 
+	String lectureObject = null; 
+	String lRI = null; 
+	String lEPI = null;
+	String lRM = null;
+	String lEPM = null; 
+	String lRA = null; 
+	String lEPA = null; 
+	String lectureRatingStandard = null;
+	
+	//위의 변수로 부터 입력을 받을 수 있도록 밑에 작성해준다, int 형이 있었으면 try-catch 문과 int형 변환을 시켜준다
+	
+	
+	if(request.getParameter("lectureOpener") != null) {
+		lectureOpener = request.getParameter("lectureOpener");
+	}
+	if(request.getParameter("lectureTime") != null) {
+		lectureTime = request.getParameter("lectureTime");
+	}
+	if(request.getParameter("lectureMentor") != null) {
+		lectureMentor = request.getParameter("lectureMentor");
+	}
+	if(request.getParameter("lectureSubject") != null) {
+		lectureSubject = request.getParameter("lectureSubject");
+	}
+	if(request.getParameter("lectureDivide") != null) {
+		lectureDivide = request.getParameter("lectureDivide");
+	}
+	if(request.getParameter("lectureName") != null) {
+		lectureName = request.getParameter("lectureName");
+	}
+	if(request.getParameter("lectureBackground") != null) {
+		lectureBackground = request.getParameter("lectureBackground");
+	}
+	if(request.getParameter("lectureGoal") != null) {
+		lectureGoal = request.getParameter("lectureGoal");
+	}
+	if(request.getParameter("lecture1st") != null) {
+		lecture1st = request.getParameter("lecture1st");
+	}
+	if(request.getParameter("lecture2st") != null) {
+		lecture2st = request.getParameter("lecture2st");
+	}
+	if(request.getParameter("lecture3st") != null) {
+		lecture3st = request.getParameter("lecture3st");
+	}
+	if(request.getParameter("lecture4st") != null) {
+		lecture4st = request.getParameter("lecture4st");
+	}
+	if(request.getParameter("lecture5st") != null) {
+		lecture5st = request.getParameter("lecture5st");
+	}
+	if(request.getParameter("lectureObject") != null) {
+		lectureObject = request.getParameter("lectureObject");
+	}
+	if(request.getParameter("lRI") != null) {
+		lRI = request.getParameter("lRI");
+	}
+	if(request.getParameter("lEPI") != null) {
+		lEPI = request.getParameter("lEPI");
+	}
+	if(request.getParameter("lRM") != null) {
+		lRM = request.getParameter("lRM");
+	}
+	if(request.getParameter("lEPM") != null) {
+		lEPM = request.getParameter("lEPM");
+	}
+	if(request.getParameter("lRA") != null) {
+		lRA = request.getParameter("lRA");
+	}
+	if(request.getParameter("lEPA") != null) {
+		lEPA = request.getParameter("lEPA");
+	}
+	if(request.getParameter("lectureRatingStandard") != null) {
+		lectureRatingStandard = request.getParameter("lectureRatingStandard");
+	}
+	
+	// 입력 값이 null or 공백이면 안되는 if문 작성 lecture5st==null과 lecture5st.equals("") || lRI == null || lEPI == null || lRM == null || lEPM == null || lRA == null || lEPA == null 뺐음. 5주차 넣을 때 사용하기
+	
+	if(lectureOpener == null || lectureTime == null || lectureMentor == null || lectureSubject == null || lectureDivide == null || lectureName == null || 
+			lectureBackground == null || lectureGoal == null || lecture1st == null || lecture2st == null || lecture3st == null || lecture4st == null || 
+			lectureObject == null  ||
+			lectureOpener.equals("") || lectureName.equals("")) {
+		PrintWriter script = response.getWriter();
+		script.println("<script>");
+		script.println("alert('입력이 안 된 사항이 있습니다.');");
+		script.println("history.back();");
+		script.println("</script>");
+		script.close();
+		return;
+	}
+	
+	// planDAO를 초기화 해준다
+	PlanDAO planDAO = new PlanDAO();
+	
+	// planDAO에서 write함수를 이용해서 실제로 사용자가 작성한 학습계획서 글이 등록되도록 작업한다, lecture5st 뺐음
+	
+	int result = planDAO.write(new PlanDTO(id,lectureOpener, lectureTime, lectureMentor, 
+			lectureSubject, lectureDivide, lectureName, lectureBackground, lectureGoal, 
+			lecture1st, lecture2st, lecture3st, lecture4st, lecture5st, lectureObject, 
+			lRI, lEPI, lRM, lEPM, lRA, lEPA, lectureRatingStandard));
+	if(result == -1) {
+		PrintWriter script = response.getWriter();
+		script.println("<script>");
+		script.println("alert('학습계획서 등록 실패했습니다.')");
+		script.println("history.back()");
+		script.println("</script>");
+		script.close();
+		return;
+	} else {
+		PrintWriter script = response.getWriter();
+		script.println("<script>");
+		script.println("alert('학습계획서 등록이 완료 되었습니다.');");
+		script.println("location.href = 'index.jsp'");
+		script.println("</script>");
+		script.close();
+		return;
+	}
+
+%>
